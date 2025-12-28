@@ -1,0 +1,44 @@
+{
+  "games": [
+    { "id": "g1", "title": "Helldivers 2", "type": "game", "year": 2024, "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5l1t.webp" },
+    { "id": "g2", "title": "Final Fantasy VII Rebirth", "type": "game", "year": 2024, "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6bos.webp" },
+    { "id": "g3", "title": "Elden Ring: Shadow of the Erdtree", "type": "game", "year": 2024, "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7mlz.webp" },
+    { "id": "g4", "title": "Black Myth: Wukong", "type": "game", "year": 2024, "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5mbv.webp" },
+    { "id": "g5", "title": "Dragon's Dogma 2", "type": "game", "year": 2024, "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7dxh.webp" },
+    { "id": "g6", "title": "Like a Dragon: Infinite Wealth", "type": "game", "year": 2024, "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6rww.webp" },
+    { "id": "g7", "title": "Metaphor: ReFantazio", "type": "game", "year": 2024, "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8fkx.webp" },
+    { "id": "g8", "title": "Silent Hill 2 Remake", "type": "game", "year": 2024, "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co839i.webp" },
+    { "id": "g9", "title": "Balatro", "type": "game", "year": 2024, "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7t8i.webp" },
+    { "id": "g10", "title": "Animal Well", "type": "game", "year": 2024, "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7oc5.webp" },
+    { "id": "g11", "title": "Prince of Persia: The Lost Crown", "type": "game", "year": 2024, "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6y3y.webp" },
+    { "id": "g12", "title": "Astro Bot", "type": "game", "year": 2024, "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co91v6.webp" }
+  ],
+  "movies": [
+    { "id": "m1", "title": "Дюна: Часть вторая", "type": "movie", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/8b8R8l88Qje9dn9OE8PY05Nxl1X.jpg" },
+    { "id": "m2", "title": "Субстанция", "type": "movie", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/lqoMzCcZYEFK729d6eu8Iy6IRGZ.jpg" },
+    { "id": "m3", "title": "Анора", "type": "movie", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/7MrgIUeq0DD2iF7GR6wqJfYZNeC.jpg" },
+    { "id": "m4", "title": "Фуриоса", "type": "movie", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/iADOJ8Zymht2JPMoy3R7xceZprc.jpg" },
+    { "id": "m5", "title": "Чужой: Ромул", "type": "movie", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/b33nnKl1GSFbao4l3fZDDqsMx0F.jpg" },
+    { "id": "m6", "title": "Дэдпул и Росомаха", "type": "movie", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" },
+    { "id": "m7", "title": "Гладиатор 2", "type": "movie", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/2cxhvwyEwRlysAmRH4iodkvo0z5.jpg" },
+    { "id": "m8", "title": "Носферату", "type": "movie", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/5qGIxdEO841C0tdY8vOdLoRVrr0.jpg" },
+    { "id": "m9", "title": "Злая", "type": "movie", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/xDGbZ0JJ3mYaGKy4Nzd9Kph6M9L.jpg" },
+    { "id": "m10", "title": "Конклав", "type": "movie", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/m4IH5kEwGcbVBR7AlcAMu4HephL.jpg" },
+    { "id": "m11", "title": "Падение империи", "type": "movie", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/sh7Rg8Er3tFcN9BpKIPOMvALgZd.jpg" },
+    { "id": "m12", "title": "Роботы-дикари", "type": "movie", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/wTnV3PCVW5O92JMrFvvrRcV39RU.jpg" }
+  ],
+  "series": [
+    { "id": "s1", "title": "Сёгун", "type": "series", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/7O4iVfOMQmdCSxhOg1WnzG1AgYT.jpg" },
+    { "id": "s2", "title": "Фоллаут", "type": "series", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/AnsSKR9LuK0T9bAOcPVA3PUvyWj.jpg" },
+    { "id": "s3", "title": "Рипли", "type": "series", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/dFYDrHMYwwXKuugrGcmDOPKLAtC.jpg" },
+    { "id": "s4", "title": "Задача трёх тел", "type": "series", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/rHLLjLZLwNym4eKvkzPPsF2rOlO.jpg" },
+    { "id": "s5", "title": "Медведь (сезон 3)", "type": "series", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/sHFlg96l3WPHtP6AzfD1UDlCr2V.jpg" },
+    { "id": "s6", "title": "Дом Дракона (сезон 2)", "type": "series", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/xgGGinKRL8xeRkaAR9RMbtyk60y.jpg" },
+    { "id": "s7", "title": "Истинный детектив: Ночная страна", "type": "series", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/pB6rSwKe5ELNEPvGaL9GNobNq0g.jpg" },
+    { "id": "s8", "title": "Бэби-олень", "type": "series", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/kGJRO7Vc5IG0Ey8RZOjpNfSmuBb.jpg" },
+    { "id": "s9", "title": "Властелин колец: Кольца власти (сезон 2)", "type": "series", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/NNC08YmJFFlLi1prBkK8quk3dp.jpg" },
+    { "id": "s10", "title": "Пингвин", "type": "series", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/oA8QVTGlAN511uCAHDNKe0P773R.jpg" },
+    { "id": "s11", "title": "Монстр: История Менендесов", "type": "series", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/6Y9wCIYgBx29h8hHKHBbSpy8cxc.jpg" },
+    { "id": "s12", "title": "Slow Horses (сезон 4)", "type": "series", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/9BWLzjygYfDrpnFNaxKlnHhu3yP.jpg" }
+  ]
+}
