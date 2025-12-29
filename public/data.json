@@ -1,92 +1,536 @@
 {
   "games": [
-    { "id": "g1", "title": "Helldivers 2", "type": "game", "year": 2024, "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5l1t.webp" },
-    { "id": "g2", "title": "Final Fantasy VII Rebirth", "type": "game", "year": 2024, "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6bos.webp" },
-    { "id": "g3", "title": "Elden Ring: Shadow of the Erdtree", "type": "game", "year": 2024, "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7mlz.webp" },
-    { "id": "g4", "title": "Black Myth: Wukong", "type": "game", "year": 2024, "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co5mbv.webp" },
-    { "id": "g5", "title": "Dragon's Dogma 2", "type": "game", "year": 2024, "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7dxh.webp" },
-    { "id": "g6", "title": "Like a Dragon: Infinite Wealth", "type": "game", "year": 2024, "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6rww.webp" },
-    { "id": "g7", "title": "Metaphor: ReFantazio", "type": "game", "year": 2024, "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co8fkx.webp" },
-    { "id": "g8", "title": "Silent Hill 2 Remake", "type": "game", "year": 2024, "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co839i.webp" },
-    { "id": "g9", "title": "Balatro", "type": "game", "year": 2024, "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7t8i.webp" },
-    { "id": "g10", "title": "Animal Well", "type": "game", "year": 2024, "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co7oc5.webp" },
-    { "id": "g11", "title": "Prince of Persia: The Lost Crown", "type": "game", "year": 2024, "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co6y3y.webp" },
-    { "id": "g12", "title": "Astro Bot", "type": "game", "year": 2024, "image": "https://images.igdb.com/igdb/image/upload/t_cover_big/co91v6.webp" }
+    {
+      "id": "final-fantasy-xvi",
+      "title": "Final Fantasy XVI",
+      "year": 2023,
+      "cover": ""
+    },
+    {
+      "id": "elden-ring---night-reign",
+      "title": "Elden Ring - Night Reign",
+      "year": 2025,
+      "cover": ""
+    },
+    {
+      "id": "mafia---the-old-country",
+      "title": "Mafia - The Old Country",
+      "year": 2025,
+      "cover": ""
+    },
+    {
+      "id": "warhammer-40000---space-marine-2",
+      "title": "Warhammer 40000 - Space Marine 2",
+      "year": 2024,
+      "cover": ""
+    },
+    {
+      "id": "doom---the-dark-ages",
+      "title": "Doom - The Dark Ages",
+      "year": 2025,
+      "cover": ""
+    },
+    {
+      "id": "gears-of-war---reloaded",
+      "title": "Gears of War - Reloaded",
+      "year": 2025,
+      "cover": ""
+    },
+    {
+      "id": "indiana-jones-and-the-great-circle",
+      "title": "Indiana Jones and the Great Circle",
+      "year": 2024,
+      "cover": ""
+    },
+    {
+      "id": "call-of-duty---advanced-warfare",
+      "title": "Call of Duty - Advanced Warfare",
+      "year": 2014,
+      "cover": ""
+    },
+    {
+      "id": "death-stranding-2---on-the-beach",
+      "title": "Death Stranding 2 - On the Beach",
+      "year": 2025,
+      "cover": ""
+    },
+    {
+      "id": "assassin-s-creed-shadows",
+      "title": "Assassin's Creed Shadows",
+      "year": 2024,
+      "cover": ""
+    },
+    {
+      "id": "call-of-duty---black-ops-7",
+      "title": "Call of Duty - Black Ops 7",
+      "year": 2025,
+      "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3606480/d7041a15f572f7702d5f4bc97e498cd3e1cc62e2/header.jpg?t=1758236703"
+    },
+    {
+      "id": "split-fiction",
+      "title": "Split Fiction",
+      "year": 2025,
+      "cover": ""
+    },
+    {
+      "id": "stellar-blade",
+      "title": "Stellar Blade",
+      "year": 2024,
+      "cover": ""
+    }
   ],
   "movies": [
-    { "id": "m1", "title": "Avatar - The Way of Water", "type": "movie", "year": 2022, "image": "https://image.tmdb.org/t/p/w500/jzJIKuu1OaZxtEDdgGAwvZYDuKL.jpg" },
-    { "id": "m2", "title": "Barbarian", "type": "movie", "year": 2022, "image": "https://media.themoviedb.org/t/p/w500/idT5mnqPcJgSkvpDX7pJffBzdVH.jpg" },
-    { "id": "m3", "title": "Batman Begins", "type": "movie", "year": 2005, "image": "https://media.themoviedb.org/t/p/w500/sPX89Td70IDDjVr85jdSBb4rWGr.jpg" },
-    { "id": "m4", "title": "Carry-On", "type": "movie", "year": 2024, "image": "https://walter-r2.trakt.tv/images/movies/000/807/959/posters/thumb/7228589764.jpg.webp" },
-    { "id": "m5", "title": "Chainsaw Man - The Movie - Reze Arc", "type": "movie", "year": 2025, "image": "https://image.tmdb.org/t/p/w500/aZwfY1P57MrEQKW5m9JrtcWg0IB.jpg" },
-    { "id": "m6", "title": "Challengers", "type": "movie", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/H6vke7zGiuLsz4v4RPeReb9rsv.jpg" },
-    { "id": "m7", "title": "Civil War", "type": "movie", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/sh7Rg8Er3tFcN9BpKIPOMvALgZd.jpg" },
-    { "id": "m8", "title": "Die Hard", "type": "movie", "year": 1988, "image": "https://walter-r2.trakt.tv/images/movies/000/000/443/posters/thumb/84856b771d.jpg.webp" },
-    { "id": "m9", "title": "Edge of Tomorrow", "type": "movie", "year": 2014, "image": "https://image.tmdb.org/t/p/original/nBM9MMa2WCwvMG4IJ3eiGUdbPe6.jpg" },
-    { "id": "m10", "title": "Fantastic Four", "type": "movie", "year": 2025, "image": "https://media.themoviedb.org/t/p/w500/2iZ0pypKSnSvwtj1u7Bth3xm6ru.jpg" },
-    { "id": "m11", "title": "Predator - Badlands", "type": "movie", "year": 2025, "image": "https://media.themoviedb.org/t/p/w500/ef2QSeBkrYhAdfsWGXmp0lvH0T1.jpg" },
-    { "id": "m12", "title": "Rogue One - A Star Wars Story", "type": "movie", "year": 2016, "image": "https://image.tmdb.org/t/p/original/rS5lCHmZFHosXzTSjMNUX9B2NaJ.jpg" },
-    { "id": "m13", "title": "Superman", "type": "movie", "year": 2025, "image": "https://image.tmdb.org/t/p/original/g2e0gcSTFcyPkBqs3vKK1YpqBsy.jpg" },
-    { "id": "m14", "title": "TRON - Ares", "type": "movie", "year": 2025, "image": "https://image.tmdb.org/t/p/original/e4KE2bvhTqko9UcOGiRPaIM2DS0.jpg" },
-    { "id": "m15", "title": "The Dark Knight", "type": "movie", "year": 2008, "image": "https://media.themoviedb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg" },
-    { "id": "m16", "title": "The Family Plan", "type": "movie", "year": 2023, "image": "https://walter-r2.trakt.tv/images/movies/000/827/935/posters/thumb/d464661f98.jpg.webp" },
-    { "id": "m17", "title": "The Fantastic Four - First Steps", "type": "movie", "year": 2025, "image": "https://image.tmdb.org/t/p/original/A22uCKwag8Yve79Hwc46nXWXHFw.jpg" },
-    { "id": "m18", "title": "Transformers One", "type": "movie", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/iRCgqpdVE4wyLQvGYU3ZP7pAtUc.jpg" },
-    { "id": "m19", "title": "Weapons", "type": "movie", "year": 2025, "image": "https://media.themoviedb.org/t/p/w500/cpf7vsRZ0MYRQcnLWteD5jK9ymT.jpg" }
+    {
+      "id": "m1",
+      "title": "Avatar - The Way of Water",
+      "type": "movie",
+      "year": 2022,
+      "image": "https://image.tmdb.org/t/p/w500/jzJIKuu1OaZxtEDdgGAwvZYDuKL.jpg"
+    },
+    {
+      "id": "m2",
+      "title": "Barbarian",
+      "type": "movie",
+      "year": 2022,
+      "image": "https://media.themoviedb.org/t/p/w500/idT5mnqPcJgSkvpDX7pJffBzdVH.jpg"
+    },
+    {
+      "id": "m3",
+      "title": "Batman Begins",
+      "type": "movie",
+      "year": 2005,
+      "image": "https://media.themoviedb.org/t/p/w500/sPX89Td70IDDjVr85jdSBb4rWGr.jpg"
+    },
+    {
+      "id": "m4",
+      "title": "Carry-On",
+      "type": "movie",
+      "year": 2024,
+      "image": "https://walter-r2.trakt.tv/images/movies/000/807/959/posters/thumb/7228589764.jpg.webp"
+    },
+    {
+      "id": "m5",
+      "title": "Chainsaw Man - The Movie - Reze Arc",
+      "type": "movie",
+      "year": 2025,
+      "image": "https://image.tmdb.org/t/p/w500/aZwfY1P57MrEQKW5m9JrtcWg0IB.jpg"
+    },
+    {
+      "id": "m6",
+      "title": "Challengers",
+      "type": "movie",
+      "year": 2024,
+      "image": "https://image.tmdb.org/t/p/w500/H6vke7zGiuLsz4v4RPeReb9rsv.jpg"
+    },
+    {
+      "id": "m7",
+      "title": "Civil War",
+      "type": "movie",
+      "year": 2024,
+      "image": "https://image.tmdb.org/t/p/w500/sh7Rg8Er3tFcN9BpKIPOMvALgZd.jpg"
+    },
+    {
+      "id": "m8",
+      "title": "Die Hard",
+      "type": "movie",
+      "year": 1988,
+      "image": "https://walter-r2.trakt.tv/images/movies/000/000/443/posters/thumb/84856b771d.jpg.webp"
+    },
+    {
+      "id": "m9",
+      "title": "Edge of Tomorrow",
+      "type": "movie",
+      "year": 2014,
+      "image": "https://image.tmdb.org/t/p/original/nBM9MMa2WCwvMG4IJ3eiGUdbPe6.jpg"
+    },
+    {
+      "id": "m10",
+      "title": "Fantastic Four",
+      "type": "movie",
+      "year": 2025,
+      "image": "https://media.themoviedb.org/t/p/w500/2iZ0pypKSnSvwtj1u7Bth3xm6ru.jpg"
+    },
+    {
+      "id": "m11",
+      "title": "Predator - Badlands",
+      "type": "movie",
+      "year": 2025,
+      "image": "https://media.themoviedb.org/t/p/w500/ef2QSeBkrYhAdfsWGXmp0lvH0T1.jpg"
+    },
+    {
+      "id": "m12",
+      "title": "Rogue One - A Star Wars Story",
+      "type": "movie",
+      "year": 2016,
+      "image": "https://image.tmdb.org/t/p/original/rS5lCHmZFHosXzTSjMNUX9B2NaJ.jpg"
+    },
+    {
+      "id": "m13",
+      "title": "Superman",
+      "type": "movie",
+      "year": 2025,
+      "image": "https://image.tmdb.org/t/p/original/g2e0gcSTFcyPkBqs3vKK1YpqBsy.jpg"
+    },
+    {
+      "id": "m14",
+      "title": "TRON - Ares",
+      "type": "movie",
+      "year": 2025,
+      "image": "https://image.tmdb.org/t/p/original/e4KE2bvhTqko9UcOGiRPaIM2DS0.jpg"
+    },
+    {
+      "id": "m15",
+      "title": "The Dark Knight",
+      "type": "movie",
+      "year": 2008,
+      "image": "https://media.themoviedb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg"
+    },
+    {
+      "id": "m16",
+      "title": "The Family Plan",
+      "type": "movie",
+      "year": 2023,
+      "image": "https://walter-r2.trakt.tv/images/movies/000/827/935/posters/thumb/d464661f98.jpg.webp"
+    },
+    {
+      "id": "m17",
+      "title": "The Fantastic Four - First Steps",
+      "type": "movie",
+      "year": 2025,
+      "image": "https://image.tmdb.org/t/p/original/A22uCKwag8Yve79Hwc46nXWXHFw.jpg"
+    },
+    {
+      "id": "m18",
+      "title": "Transformers One",
+      "type": "movie",
+      "year": 2024,
+      "image": "https://image.tmdb.org/t/p/w500/iRCgqpdVE4wyLQvGYU3ZP7pAtUc.jpg"
+    },
+    {
+      "id": "m19",
+      "title": "Weapons",
+      "type": "movie",
+      "year": 2025,
+      "image": "https://media.themoviedb.org/t/p/w500/cpf7vsRZ0MYRQcnLWteD5jK9ymT.jpg"
+    }
   ],
   "series": [
-    { "id": "s1", "title": "Alien - Earth S01", "type": "series", "year": 2025, "image": "https://media.themoviedb.org/t/p/w500/yueXS3q8BtoWekcHOATFHicLl3e.jpg" },
-    { "id": "s2", "title": "Andor S02", "type": "series", "year": 2025, "image": "https://image.tmdb.org/t/p/original/xtFRHGrFbCjWgEmpHAcdhDUbC3L.jpg" },
-    { "id": "s3", "title": "Chainsaw Man S01", "type": "series", "year": 2022, "image": "https://image.tmdb.org/t/p/w500/yVtx7Xn9UxNJqvG2BkvhCcmed9S.jpg" },
-    { "id": "s4", "title": "Common Side Effect S01", "type": "series", "year": 2025, "image": "https://walter-r2.trakt.tv/images/seasons/000/327/002/posters/thumb/905a604b0a.jpg.webp" },
-    { "id": "s5", "title": "Dan Da Dan S01", "type": "series", "year": 2025, "image": "https://m.media-amazon.com/images/M/MV5BYWFhOWMxNTYtZThiMi00ZmQ5LTlmODktN2QwNzUyZjMyZGQzXkEyXkFqcGc@._V1_FMjpg_UY2048_.jpg" },
-    { "id": "s6", "title": "Daredevil S01", "type": "series", "year": 2025, "image": "https://image.tmdb.org/t/p/original/wMSkblLfoQf5AHWMSQP1ln9LwkU.jpg" },
-    { "id": "s7", "title": "Dexter - Original Sin S01", "type": "series", "year": 2024, "image": "https://image.tmdb.org/t/p/original/j5bP7spdfS0NpDLKDlqJYyJPi1j.jpg" },
-    { "id": "s8", "title": "Dexter - Resurrection S01", "type": "series", "year": 2025, "image": "https://walter-r2.trakt.tv/images/shows/000/249/647/posters/thumb/0e56313df7.jpg.webp" },
-    { "id": "s9", "title": "Foundation S01", "type": "series", "year": 2021, "image": "https://walter-r2.trakt.tv/images/seasons/000/195/099/posters/thumb/ebb9c39338.jpg.webp" },
-    { "id": "s10", "title": "Foundation S02", "type": "series", "year": 2023, "image": "https://walter-r2.trakt.tv/images/seasons/000/312/735/posters/thumb/6d5a89180d.jpg.webp" },
-    { "id": "s11", "title": "Foundation S03", "type": "series", "year": 2025, "image": "https://walter-r2.trakt.tv/images/seasons/000/462/717/posters/thumb/31a1f0f40c.jpg.webp" },
-    { "id": "s12", "title": "Gen V S02", "type": "series", "year": 2023, "image": "https://media.themoviedb.org/t/p/w500/tEv842Nd5uMSavURG4aQO1pNtst.jpg" },
-    { "id": "s13", "title": "Georgie and Mandy's First Marriage S01", "type": "series", "year": 2024, "image": "https://image.tmdb.org/t/p/original/3z2mYFxUkzanb2eeIcVyfJq0G3q.jpg" },
-    { "id": "s14", "title": "How to Sell Drugs Online Fast S04", "type": "series", "year": 2025, "image": "https://image.tmdb.org/t/p/original/xg7U76h1DNtwa0eBOIbFdiM80DR.jpg" },
-    { "id": "s15", "title": "Invincible S03", "type": "series", "year": 2025, "image": "https://walter-r2.trakt.tv/images/seasons/000/421/357/posters/thumb/e0f7924cc1.jpg.webp" },
-    { "id": "s16", "title": "Kaiju No. 8 S01", "type": "series", "year": 2025, "image": "https://m.media-amazon.com/images/M/MV5BM2VmNTc3OWQtOTVmMy00MGZlLTk3N2QtM2YwZDE5MWVjZmM5XkEyXkFqcGc@._V1_FMjpg_UY3000_.jpg" },
-    { "id": "s17", "title": "Mr. Robot S01", "type": "series", "year": 2015, "image": "https://walter-r2.trakt.tv/images/seasons/000/107/991/posters/thumb/688987b1c2.jpg.webp" },
-    { "id": "s18", "title": "Mr. Robot S02", "type": "series", "year": 2016, "image": "https://walter-r2.trakt.tv/images/seasons/000/114/829/posters/thumb/f358326f12.jpg.webp" },
-    { "id": "s19", "title": "Mr. Robot S03", "type": "series", "year": 2017, "image": "https://walter-r2.trakt.tv/images/seasons/000/132/972/posters/thumb/ae49b0f573.jpg.webp" },
-    { "id": "s20", "title": "Mr. Robot S04", "type": "series", "year": 2019, "image": "https://walter-r2.trakt.tv/images/seasons/000/156/170/posters/thumb/5ae865ca33.jpg.webp" },
-    { "id": "s21", "title": "Murderbot S01", "type": "series", "year": 2025, "image": "https://media.themoviedb.org/t/p/w500/mIKfKo2uDk3itzAPYIcSeYr4KtF.jpg" },
-    { "id": "s22", "title": "Paradise S01", "type": "series", "year": 2025, "image": "https://image.tmdb.org/t/p/original/sJUti0JDtE1IYl7RVJARAGyKHqz.jpg" },
-    { "id": "s23", "title": "Peacemaker S02", "type": "series", "year": 2022, "image": "https://media.themoviedb.org/t/p/w500/hE3LRZAY84fG19a18pzpkZERjTE.jpg" },
-    { "id": "s24", "title": "Pluribus S01", "type": "series", "year": 2025, "image": "https://walter-r2.trakt.tv/images/seasons/000/327/121/posters/thumb/f192887596.jpg.webp" },
-    { "id": "s25", "title": "Reacher S03", "type": "series", "year": 2025, "image": "https://image.tmdb.org/t/p/original/uF5v0SPpKzC9dWXIspA1x2zEDKO.jpg" },
-    { "id": "s26", "title": "SAKAMOTO DAYS S01", "type": "series", "year": 2025, "image": "https://walter-r2.trakt.tv/images/seasons/000/320/442/posters/thumb/fa8e5fc55e.jpg.webp" },
-    { "id": "s27", "title": "Severance S02", "type": "series", "year": 2025, "image": "https://walter-r2.trakt.tv/images/shows/000/154/997/posters/thumb/f60ddb06de.jpg.webp" },
-    { "id": "s28", "title": "Shrinking S02", "type": "series", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/cVmrNYgm5wcEexbXg4laNn3u4vq.jpg" },
-    { "id": "s29", "title": "Silo S02", "type": "series", "year": 2024, "image": "https://image.tmdb.org/t/p/original/qblHRA3QDNZi1xrOsJodBxluCnT.jpg" },
-    { "id": "s30", "title": "Squid Game S02", "type": "series", "year": 2024, "image": "https://walter-r2.trakt.tv/images/seasons/000/292/934/posters/thumb/e5583a74d5.jpg.webp" },
-    { "id": "s31", "title": "Squid Game S03", "type": "series", "year": 2025, "image": "https://image.tmdb.org/t/p/original/sAuLRAzOKraGyzvFLzBvJoiTqfC.jpg" },
-    { "id": "s32", "title": "Stranger Things S05", "type": "series", "year": 2025, "image": "https://image.tmdb.org/t/p/w500/AaLrOh33YLkK1WLEB8Uml7FL8fm.jpg" },
-    { "id": "s33", "title": "The Last of Us S02", "type": "series", "year": 2025, "image": "https://image.tmdb.org/t/p/original/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg" },
-    { "id": "s34", "title": "What If...? S03", "type": "series", "year": 2024, "image": "https://walter-r2.trakt.tv/images/seasons/000/351/847/posters/thumb/508775508f.jpg.webp" },
-    { "id": "s35", "title": "You S05", "type": "series", "year": 2025, "image": "https://image.tmdb.org/t/p/original/oANi0vEE92nuijiZQgPZ88FSxqQ.jpg" },
-    { "id": "s36", "title": "Жуки S04", "type": "series", "year": 2023, "image": "https://walter-r2.trakt.tv/images/seasons/000/435/226/posters/thumb/9e16145f97.jpg.webp" },
-    { "id": "s37", "title": "Телохранители S02", "type": "series", "year": 2024, "image": "https://image.tmdb.org/t/p/original/vDtHxGvYgklcMAqbSxVVLpbgLaC.jpg" },
-    { "id": "s38", "title": "Универ S01", "type": "series", "year": 2025, "image": "https://walter-r2.trakt.tv/images/shows/000/278/917/posters/thumb/9acb1b7293.jpg.webp" },
-    { "id": "s39", "title": "Универ S02", "type": "series", "year": 2025, "image": "https://walter-r2.trakt.tv/images/seasons/000/488/739/posters/thumb/60d078de2d.jpg.webp" }
+    {
+      "id": "s1",
+      "title": "Alien - Earth S01",
+      "type": "series",
+      "year": 2025,
+      "image": "https://media.themoviedb.org/t/p/w500/yueXS3q8BtoWekcHOATFHicLl3e.jpg"
+    },
+    {
+      "id": "s2",
+      "title": "Andor S02",
+      "type": "series",
+      "year": 2025,
+      "image": "https://image.tmdb.org/t/p/original/xtFRHGrFbCjWgEmpHAcdhDUbC3L.jpg"
+    },
+    {
+      "id": "s3",
+      "title": "Chainsaw Man S01",
+      "type": "series",
+      "year": 2022,
+      "image": "https://image.tmdb.org/t/p/w500/yVtx7Xn9UxNJqvG2BkvhCcmed9S.jpg"
+    },
+    {
+      "id": "s4",
+      "title": "Common Side Effect S01",
+      "type": "series",
+      "year": 2025,
+      "image": "https://walter-r2.trakt.tv/images/seasons/000/327/002/posters/thumb/905a604b0a.jpg.webp"
+    },
+    {
+      "id": "s5",
+      "title": "Dan Da Dan S01",
+      "type": "series",
+      "year": 2025,
+      "image": "https://m.media-amazon.com/images/M/MV5BYWFhOWMxNTYtZThiMi00ZmQ5LTlmODktN2QwNzUyZjMyZGQzXkEyXkFqcGc@._V1_FMjpg_UY2048_.jpg"
+    },
+    {
+      "id": "s6",
+      "title": "Daredevil S01",
+      "type": "series",
+      "year": 2025,
+      "image": "https://image.tmdb.org/t/p/original/wMSkblLfoQf5AHWMSQP1ln9LwkU.jpg"
+    },
+    {
+      "id": "s7",
+      "title": "Dexter - Original Sin S01",
+      "type": "series",
+      "year": 2024,
+      "image": "https://image.tmdb.org/t/p/original/j5bP7spdfS0NpDLKDlqJYyJPi1j.jpg"
+    },
+    {
+      "id": "s8",
+      "title": "Dexter - Resurrection S01",
+      "type": "series",
+      "year": 2025,
+      "image": "https://walter-r2.trakt.tv/images/shows/000/249/647/posters/thumb/0e56313df7.jpg.webp"
+    },
+    {
+      "id": "s9",
+      "title": "Foundation S01",
+      "type": "series",
+      "year": 2021,
+      "image": "https://walter-r2.trakt.tv/images/seasons/000/195/099/posters/thumb/ebb9c39338.jpg.webp"
+    },
+    {
+      "id": "s10",
+      "title": "Foundation S02",
+      "type": "series",
+      "year": 2023,
+      "image": "https://walter-r2.trakt.tv/images/seasons/000/312/735/posters/thumb/6d5a89180d.jpg.webp"
+    },
+    {
+      "id": "s11",
+      "title": "Foundation S03",
+      "type": "series",
+      "year": 2025,
+      "image": "https://walter-r2.trakt.tv/images/seasons/000/462/717/posters/thumb/31a1f0f40c.jpg.webp"
+    },
+    {
+      "id": "s12",
+      "title": "Gen V S02",
+      "type": "series",
+      "year": 2023,
+      "image": "https://media.themoviedb.org/t/p/w500/tEv842Nd5uMSavURG4aQO1pNtst.jpg"
+    },
+    {
+      "id": "s13",
+      "title": "Georgie and Mandy's First Marriage S01",
+      "type": "series",
+      "year": 2024,
+      "image": "https://image.tmdb.org/t/p/original/3z2mYFxUkzanb2eeIcVyfJq0G3q.jpg"
+    },
+    {
+      "id": "s14",
+      "title": "How to Sell Drugs Online Fast S04",
+      "type": "series",
+      "year": 2025,
+      "image": "https://image.tmdb.org/t/p/original/xg7U76h1DNtwa0eBOIbFdiM80DR.jpg"
+    },
+    {
+      "id": "s15",
+      "title": "Invincible S03",
+      "type": "series",
+      "year": 2025,
+      "image": "https://walter-r2.trakt.tv/images/seasons/000/421/357/posters/thumb/e0f7924cc1.jpg.webp"
+    },
+    {
+      "id": "s16",
+      "title": "Kaiju No. 8 S01",
+      "type": "series",
+      "year": 2025,
+      "image": "https://m.media-amazon.com/images/M/MV5BM2VmNTc3OWQtOTVmMy00MGZlLTk3N2QtM2YwZDE5MWVjZmM5XkEyXkFqcGc@._V1_FMjpg_UY3000_.jpg"
+    },
+    {
+      "id": "s17",
+      "title": "Mr. Robot S01",
+      "type": "series",
+      "year": 2015,
+      "image": "https://walter-r2.trakt.tv/images/seasons/000/107/991/posters/thumb/688987b1c2.jpg.webp"
+    },
+    {
+      "id": "s18",
+      "title": "Mr. Robot S02",
+      "type": "series",
+      "year": 2016,
+      "image": "https://walter-r2.trakt.tv/images/seasons/000/114/829/posters/thumb/f358326f12.jpg.webp"
+    },
+    {
+      "id": "s19",
+      "title": "Mr. Robot S03",
+      "type": "series",
+      "year": 2017,
+      "image": "https://walter-r2.trakt.tv/images/seasons/000/132/972/posters/thumb/ae49b0f573.jpg.webp"
+    },
+    {
+      "id": "s20",
+      "title": "Mr. Robot S04",
+      "type": "series",
+      "year": 2019,
+      "image": "https://walter-r2.trakt.tv/images/seasons/000/156/170/posters/thumb/5ae865ca33.jpg.webp"
+    },
+    {
+      "id": "s21",
+      "title": "Murderbot S01",
+      "type": "series",
+      "year": 2025,
+      "image": "https://media.themoviedb.org/t/p/w500/mIKfKo2uDk3itzAPYIcSeYr4KtF.jpg"
+    },
+    {
+      "id": "s22",
+      "title": "Paradise S01",
+      "type": "series",
+      "year": 2025,
+      "image": "https://image.tmdb.org/t/p/original/sJUti0JDtE1IYl7RVJARAGyKHqz.jpg"
+    },
+    {
+      "id": "s23",
+      "title": "Peacemaker S02",
+      "type": "series",
+      "year": 2022,
+      "image": "https://media.themoviedb.org/t/p/w500/hE3LRZAY84fG19a18pzpkZERjTE.jpg"
+    },
+    {
+      "id": "s24",
+      "title": "Pluribus S01",
+      "type": "series",
+      "year": 2025,
+      "image": "https://walter-r2.trakt.tv/images/seasons/000/327/121/posters/thumb/f192887596.jpg.webp"
+    },
+    {
+      "id": "s25",
+      "title": "Reacher S03",
+      "type": "series",
+      "year": 2025,
+      "image": "https://image.tmdb.org/t/p/original/uF5v0SPpKzC9dWXIspA1x2zEDKO.jpg"
+    },
+    {
+      "id": "s26",
+      "title": "SAKAMOTO DAYS S01",
+      "type": "series",
+      "year": 2025,
+      "image": "https://walter-r2.trakt.tv/images/seasons/000/320/442/posters/thumb/fa8e5fc55e.jpg.webp"
+    },
+    {
+      "id": "s27",
+      "title": "Severance S02",
+      "type": "series",
+      "year": 2025,
+      "image": "https://walter-r2.trakt.tv/images/shows/000/154/997/posters/thumb/f60ddb06de.jpg.webp"
+    },
+    {
+      "id": "s28",
+      "title": "Shrinking S02",
+      "type": "series",
+      "year": 2024,
+      "image": "https://image.tmdb.org/t/p/w500/cVmrNYgm5wcEexbXg4laNn3u4vq.jpg"
+    },
+    {
+      "id": "s29",
+      "title": "Silo S02",
+      "type": "series",
+      "year": 2024,
+      "image": "https://image.tmdb.org/t/p/original/qblHRA3QDNZi1xrOsJodBxluCnT.jpg"
+    },
+    {
+      "id": "s30",
+      "title": "Squid Game S02",
+      "type": "series",
+      "year": 2024,
+      "image": "https://walter-r2.trakt.tv/images/seasons/000/292/934/posters/thumb/e5583a74d5.jpg.webp"
+    },
+    {
+      "id": "s31",
+      "title": "Squid Game S03",
+      "type": "series",
+      "year": 2025,
+      "image": "https://image.tmdb.org/t/p/original/sAuLRAzOKraGyzvFLzBvJoiTqfC.jpg"
+    },
+    {
+      "id": "s32",
+      "title": "Stranger Things S05",
+      "type": "series",
+      "year": 2025,
+      "image": "https://image.tmdb.org/t/p/w500/AaLrOh33YLkK1WLEB8Uml7FL8fm.jpg"
+    },
+    {
+      "id": "s33",
+      "title": "The Last of Us S02",
+      "type": "series",
+      "year": 2025,
+      "image": "https://image.tmdb.org/t/p/original/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg"
+    },
+    {
+      "id": "s34",
+      "title": "What If...? S03",
+      "type": "series",
+      "year": 2024,
+      "image": "https://walter-r2.trakt.tv/images/seasons/000/351/847/posters/thumb/508775508f.jpg.webp"
+    },
+    {
+      "id": "s35",
+      "title": "You S05",
+      "type": "series",
+      "year": 2025,
+      "image": "https://image.tmdb.org/t/p/original/oANi0vEE92nuijiZQgPZ88FSxqQ.jpg"
+    },
+    {
+      "id": "s36",
+      "title": "Жуки S04",
+      "type": "series",
+      "year": 2023,
+      "image": "https://walter-r2.trakt.tv/images/seasons/000/435/226/posters/thumb/9e16145f97.jpg.webp"
+    },
+    {
+      "id": "s37",
+      "title": "Телохранители S02",
+      "type": "series",
+      "year": 2024,
+      "image": "https://image.tmdb.org/t/p/original/vDtHxGvYgklcMAqbSxVVLpbgLaC.jpg"
+    },
+    {
+      "id": "s38",
+      "title": "Универ S01",
+      "type": "series",
+      "year": 2025,
+      "image": "https://walter-r2.trakt.tv/images/shows/000/278/917/posters/thumb/9acb1b7293.jpg.webp"
+    },
+    {
+      "id": "s39",
+      "title": "Универ S02",
+      "type": "series",
+      "year": 2025,
+      "image": "https://walter-r2.trakt.tv/images/seasons/000/488/739/posters/thumb/60d078de2d.jpg.webp"
+    }
   ],
   "books": [
-    { "id": "b1", "title": "Четвёртое крыло", "type": "book", "year": 2024, "image": "https://covers.openlibrary.org/b/id/14350216-L.jpg" },
-    { "id": "b2", "title": "Железное пламя", "type": "book", "year": 2024, "image": "https://covers.openlibrary.org/b/id/14556884-L.jpg" },
-    { "id": "b3", "title": "Завтра, завтра, завтра", "type": "book", "year": 2024, "image": "https://covers.openlibrary.org/b/id/12889423-L.jpg" },
-    { "id": "b4", "title": "Проект «Аве Мария»", "type": "book", "year": 2024, "image": "https://covers.openlibrary.org/b/id/10958382-L.jpg" },
-    { "id": "b5", "title": "Песнь Ахилла", "type": "book", "year": 2024, "image": "https://covers.openlibrary.org/b/id/8474917-L.jpg" },
-    { "id": "b6", "title": "Атомные привычки", "type": "book", "year": 2024, "image": "https://covers.openlibrary.org/b/id/10958055-L.jpg" },
-    { "id": "b7", "title": "Просто делай", "type": "book", "year": 2024, "image": "https://covers.openlibrary.org/b/id/12648247-L.jpg" },
-    { "id": "b8", "title": "1984", "type": "book", "year": 2024, "image": "https://covers.openlibrary.org/b/id/12648893-L.jpg" },
-    { "id": "b9", "title": "Мастер и Маргарита", "type": "book", "year": 2024, "image": "https://covers.openlibrary.org/b/id/8231856-L.jpg" },
-    { "id": "b10", "title": "Цветы для Элджернона", "type": "book", "year": 2024, "image": "https://covers.openlibrary.org/b/id/8225135-L.jpg" },
-    { "id": "b11", "title": "Дюна", "type": "book", "year": 2024, "image": "https://covers.openlibrary.org/b/id/11153217-L.jpg" },
-    { "id": "b12", "title": "Убить пересмешника", "type": "book", "year": 2024, "image": "https://covers.openlibrary.org/b/id/8228691-L.jpg" }
+    {
+      "id": "death-s-end",
+      "title": "Death's End",
+      "year": 2010,
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1430330507i/25451264.jpg"
+    },
+    {
+      "id": "project-hail-mary",
+      "title": "Project Hail Mary",
+      "year": 2021,
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1764703833i/54493401.jpg"
+    },
+    {
+      "id": "the-martian",
+      "title": "The Martian",
+      "year": 2011,
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1413706054i/18007564.jpg"
+    },
+    {
+      "id": "altered-carbon",
+      "title": "Altered Carbon",
+      "year": 2002,
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1181223670i/1128253.jpg"
+    },
+    {
+      "id": "shift",
+      "title": "Shift",
+      "year": 2013,
+      "cover": ""
+    },
+    {
+      "id": "silo",
+      "title": "Silo",
+      "year": 2011,
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1632015866i/59023378.jpg"
+    },
+    {
+      "id": "the-redemption-of-time",
+      "title": "The Redemption of Time",
+      "year": 2011,
+      "cover": "https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1540117500i/36262251.jpg"
+    }
   ]
 }
