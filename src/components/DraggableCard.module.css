@@ -110,3 +110,42 @@
     width: 70px;
   }
 }
+
+@media (min-width: 1600px) {
+  .card {
+    width: 140px;
+    border-radius: 0.625rem;
+  }
+
+  .card.inTier {
+    width: 140px;
+  }
+
+  .content {
+    padding: 0.625rem;
+  }
+
+  .title {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (min-width: 2200px) {
+  .card {
+    width: 170px;
+    border-radius: 0.75rem;
+    border-width: 3px;
+  }
+
+  .card.inTier {
+    width: 170px;
+  }
+
+  .content {
+    padding: 0.75rem;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+}

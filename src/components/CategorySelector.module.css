@@ -136,3 +136,44 @@
     justify-content: center;
   }
 }
+
+@media (min-width: 1600px) {
+  .grid {
+    gap: 2rem;
+  }
+
+  .card {
+    padding: 3rem 3rem;
+    gap: 1.5rem;
+    border-radius: 1.25rem;
+  }
+
+  .emoji {
+    font-size: 5.5rem;
+  }
+
+  .label {
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 2200px) {
+  .grid {
+    gap: 2.5rem;
+  }
+
+  .card {
+    padding: 4rem 4rem;
+    gap: 2rem;
+    border-radius: 1.5rem;
+    border-width: 2px;
+  }
+
+  .emoji {
+    font-size: 6.5rem;
+  }
+
+  .label {
+    font-size: 2rem;
+  }
+}
