@@ -12,6 +12,7 @@ interface Props {
   category: MediaType
   currentItems: MediaItem[]
   tierList: Record<TierType, MediaItem[]>
+  remainingItems: number
   isRoundComplete: boolean
   onAssignToTier: (item: MediaItem, tier: TierType) => void
   onRemoveFromTier: (item: MediaItem, tier: TierType) => void
@@ -35,6 +36,7 @@ export function TierList({
   category,
   currentItems,
   tierList,
+  remainingItems,
   isRoundComplete,
   onAssignToTier,
   onRemoveFromTier,
@@ -100,14 +102,12 @@ export function TierList({
     [findItemLocation, currentItems, tierList, onAssignToTier, onRemoveFromTier, onMoveToTier]
   )
 
-  const totalItems = TIER_ORDER.reduce((sum, tier) => sum + tierList[tier].length, 0)
-
   return (
     <div className={styles.container}>
       <div className={styles.header}>
         <span className={styles.badge}>{MEDIA_TYPE_LABELS[category].singular}</span>
         <span className={styles.counter}>
-          <span className={styles.counterNumber}>{totalItems}</span> в тир-листе
+          Осталось: <span className={styles.counterNumber}>{currentItems.length + remainingItems}</span>
         </span>
       </div>
 
@@ -123,6 +123,7 @@ export function TierList({
             <CardDock
               items={currentItems}
               isRoundComplete={isRoundComplete}
+              remainingItems={remainingItems}
               onNextRound={onNextRound}
             />
           </div>

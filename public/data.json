@@ -40,5 +40,19 @@
     { "id": "s10", "title": "Пингвин", "type": "series", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/oA8QVTGlAN511uCAHDNKe0P773R.jpg" },
     { "id": "s11", "title": "Монстр: История Менендесов", "type": "series", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/6Y9wCIYgBx29h8hHKHBbSpy8cxc.jpg" },
     { "id": "s12", "title": "Slow Horses (сезон 4)", "type": "series", "year": 2024, "image": "https://image.tmdb.org/t/p/w500/9BWLzjygYfDrpnFNaxKlnHhu3yP.jpg" }
+  ],
+  "books": [
+    { "id": "b1", "title": "Четвёртое крыло", "type": "book", "year": 2024, "image": "https://covers.openlibrary.org/b/id/14350216-L.jpg" },
+    { "id": "b2", "title": "Железное пламя", "type": "book", "year": 2024, "image": "https://covers.openlibrary.org/b/id/14556884-L.jpg" },
+    { "id": "b3", "title": "Завтра, завтра, завтра", "type": "book", "year": 2024, "image": "https://covers.openlibrary.org/b/id/12889423-L.jpg" },
+    { "id": "b4", "title": "Проект «Аве Мария»", "type": "book", "year": 2024, "image": "https://covers.openlibrary.org/b/id/10958382-L.jpg" },
+    { "id": "b5", "title": "Песнь Ахилла", "type": "book", "year": 2024, "image": "https://covers.openlibrary.org/b/id/8474917-L.jpg" },
+    { "id": "b6", "title": "Атомные привычки", "type": "book", "year": 2024, "image": "https://covers.openlibrary.org/b/id/10958055-L.jpg" },
+    { "id": "b7", "title": "Просто делай", "type": "book", "year": 2024, "image": "https://covers.openlibrary.org/b/id/12648247-L.jpg" },
+    { "id": "b8", "title": "1984", "type": "book", "year": 2024, "image": "https://covers.openlibrary.org/b/id/12648893-L.jpg" },
+    { "id": "b9", "title": "Мастер и Маргарита", "type": "book", "year": 2024, "image": "https://covers.openlibrary.org/b/id/8231856-L.jpg" },
+    { "id": "b10", "title": "Цветы для Элджернона", "type": "book", "year": 2024, "image": "https://covers.openlibrary.org/b/id/8225135-L.jpg" },
+    { "id": "b11", "title": "Дюна", "type": "book", "year": 2024, "image": "https://covers.openlibrary.org/b/id/11153217-L.jpg" },
+    { "id": "b12", "title": "Убить пересмешника", "type": "book", "year": 2024, "image": "https://covers.openlibrary.org/b/id/8228691-L.jpg" }
   ]
 }

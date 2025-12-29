@@ -5,29 +5,29 @@
 }
 
 :root {
-  --color-bg-deep: #050810;
-  --color-bg-primary: #0a0e1a;
-  --color-bg-secondary: #111827;
-  --color-bg-elevated: #1a2234;
+  --color-bg-deep: #100F0F;
+  --color-bg-primary: #1C1B1A;
+  --color-bg-secondary: #282726;
+  --color-bg-elevated: #343331;
 
-  --color-gold: #d4af37;
-  --color-gold-light: #ffd700;
-  --color-gold-pale: #f5e6c8;
-  --color-champagne: #f7e7ce;
+  --color-gold: #D0A215;
+  --color-gold-light: #DA702C;
+  --color-gold-pale: #CECDC3;
+  --color-champagne: #DAD8CE;
 
-  --color-tier-forever: #059669;
-  --color-tier-forever-glow: rgba(5, 150, 105, 0.4);
-  --color-tier-once: #d97706;
-  --color-tier-once-glow: rgba(217, 119, 6, 0.4);
-  --color-tier-delete: #dc2626;
-  --color-tier-delete-glow: rgba(220, 38, 38, 0.4);
+  --color-tier-forever: #879A39;
+  --color-tier-forever-glow: rgba(135, 154, 57, 0.4);
+  --color-tier-once: #DA702C;
+  --color-tier-once-glow: rgba(218, 112, 44, 0.4);
+  --color-tier-delete: #D14D41;
+  --color-tier-delete-glow: rgba(209, 77, 65, 0.4);
 
-  --color-text-primary: #faf7f2;
-  --color-text-secondary: #a8a29e;
-  --color-text-muted: #57534e;
+  --color-text-primary: #CECDC3;
+  --color-text-secondary: #878580;
+  --color-text-muted: #6F6E69;
 
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-display: 'Cinzel', Georgia, serif;
+  --font-body: 'Jost', system-ui, sans-serif;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -48,9 +48,9 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 40% at 80% 100%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
-    radial-gradient(ellipse 60% 40% at 20% 100%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(208, 162, 21, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 100%, rgba(208, 162, 21, 0.05) 0%, transparent 40%),
+    radial-gradient(ellipse 60% 40% at 20% 100%, rgba(208, 162, 21, 0.05) 0%, transparent 40%),
     linear-gradient(180deg, var(--color-bg-deep) 0%, var(--color-bg-primary) 100%);
   background-attachment: fixed;
 }

@@ -1,4 +1,4 @@
-export type MediaType = 'game' | 'movie' | 'series'
+export type MediaType = 'game' | 'movie' | 'series' | 'book'
 
 export interface MediaItem {
   id: string
@@ -48,23 +48,31 @@ export const MEDIA_TYPE_LABELS: Record<MediaType, { singular: string; tiers: Rec
     tiers: {
       forever: 'Играть вечно',
       once: 'Одно прохождение',
-      delete: 'Стереть из Steam',
+      delete: 'Снять с производства',
     },
   },
   movie: {
     singular: 'Фильм',
     tiers: {
-      forever: 'Пересматривать каждый год',
-      once: 'Посмотреть один раз',
-      delete: 'Никогда не снимали',
+      forever: 'В коллекцию',
+      once: 'Для фона',
+      delete: 'Верните 2 часа',
     },
   },
   series: {
     singular: 'Сериал',
     tiers: {
-      forever: 'Бесконечный ребинж',
-      once: 'Один сезон хватит',
+      forever: 'Ещё одну серию',
+      once: 'Досмотрел и забыл',
       delete: 'Отменить до съёмок',
+    },
+  },
+  book: {
+    singular: 'Книга',
+    tiers: {
+      forever: 'На полку',
+      once: 'Одного раза хватит',
+      delete: 'Сжечь тираж',
     },
   },
 }

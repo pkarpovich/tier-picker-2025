@@ -16,7 +16,7 @@
 
 .logo {
   font-family: var(--font-display);
-  font-size: 3.5rem;
+  font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 700;
   color: var(--color-text-primary);
   margin: 0 0 0.25rem 0;
@@ -50,7 +50,7 @@
 
 .tagline {
   font-family: var(--font-body);
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   color: var(--color-text-secondary);
   margin: 0;
   font-weight: 500;
@@ -65,7 +65,7 @@
   color: var(--color-bg-deep);
   font-weight: 700;
   border-radius: 2rem;
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
   margin-left: 0.5rem;
 }
 
@@ -98,14 +98,6 @@
 @media (max-width: 768px) {
   .app {
     padding: 1rem;
-  }
-
-  .logo {
-    font-size: 2rem;
-  }
-
-  .tagline {
-    font-size: 0.875rem;
   }
 
   .header {

@@ -1,47 +1,38 @@
-import { useCallback, useEffect } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Route, Switch, useLocation, useRoute } from 'wouter'
-import { useGameData } from './hooks/useGameData'
-import { useGame } from './hooks/useGame'
+import { GameProvider, useGameContext } from './context/GameContext'
 import { CategorySelector } from './components/CategorySelector'
 import { TierList } from './components/TierList'
 import { GoldenParticles } from './components/GoldenParticles'
-import type { MediaType } from './types'
+import type { MediaItem, MediaType } from './types'
 import './App.css'
 
-const VALID_CATEGORIES: MediaType[] = ['game', 'movie', 'series']
+const VALID_CATEGORIES: MediaType[] = ['game', 'movie', 'series', 'book']
 
 function CategoryPage({ category }: { category: MediaType }) {
-  const { loading, error, getRandomThree } = useGameData()
-  const game = useGame(getRandomThree)
+  const { state, remainingInCategory, isRoundComplete, startRound, assignToTier, removeFromTier, moveToTier, nextRound } = useGameContext()
 
   useEffect(() => {
-    if (!loading && !error && game.currentCategory !== category) {
-      game.startRound(category)
+    if (state.currentCategory !== category) {
+      startRound(category)
     }
-  }, [loading, error, category, game.currentCategory, game.startRound])
+  }, [category, state.currentCategory, startRound])
 
-  if (loading) {
-    return <div className="loader">Загрузка...</div>
-  }
-
-  if (error) {
-    return <div className="error">Ошибка: {error}</div>
-  }
-
-  if (!game.currentCategory) {
+  if (!state.currentCategory) {
     return <div className="loader">Загрузка...</div>
   }
 
   return (
     <TierList
-      category={game.currentCategory}
-      currentItems={game.currentItems}
-      tierList={game.tierList}
-      isRoundComplete={game.isRoundComplete}
-      onAssignToTier={game.assignToTier}
-      onRemoveFromTier={game.removeFromTier}
-      onMoveToTier={game.moveToTier}
-      onNextRound={game.nextRound}
+      category={state.currentCategory}
+      currentItems={state.currentItems}
+      tierList={state.tierList}
+      remainingItems={remainingInCategory}
+      isRoundComplete={isRoundComplete}
+      onAssignToTier={assignToTier}
+      onRemoveFromTier={removeFromTier}
+      onMoveToTier={moveToTier}
+      onNextRound={nextRound}
     />
   )
 }
@@ -62,10 +53,12 @@ function HomePage() {
 function AppContent() {
   const [, navigate] = useLocation()
   const [matchCategory, params] = useRoute('/:category')
+  const { reset } = useGameContext()
 
   const handleLogoClick = useCallback(() => {
+    reset()
     navigate('/')
-  }, [navigate])
+  }, [reset, navigate])
 
   if (matchCategory && params?.category && !VALID_CATEGORIES.includes(params.category as MediaType)) {
     navigate('/')
@@ -93,12 +86,61 @@ function AppContent() {
           <Route path="/series">
             <CategoryPage category="series" />
           </Route>
+          <Route path="/book">
+            <CategoryPage category="book" />
+          </Route>
         </Switch>
       </main>
     </div>
   )
 }
 
+interface GameData {
+  games: MediaItem[]
+  movies: MediaItem[]
+  series: MediaItem[]
+  books: MediaItem[]
+}
+
 export default function App() {
-  return <AppContent />
+  const [data, setData] = useState<GameData | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    fetch('/data.json')
+      .then((res) => res.json())
+      .then((json) => {
+        setData(json)
+        setLoading(false)
+      })
+      .catch((err) => {
+        setError(err.message)
+        setLoading(false)
+      })
+  }, [])
+
+  if (loading) {
+    return (
+      <div className="app">
+        <GoldenParticles />
+        <div className="loader">Загрузка...</div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="app">
+        <GoldenParticles />
+        <div className="error">Ошибка: {error}</div>
+      </div>
+    )
+  }
+
+  return (
+    <GameProvider data={data}>
+      <AppContent />
+    </GameProvider>
+  )
 }

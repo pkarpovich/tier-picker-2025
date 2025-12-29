@@ -6,10 +6,11 @@ import styles from './CardDock.module.css'
 interface Props {
   items: MediaItem[]
   isRoundComplete: boolean
+  remainingItems: number
   onNextRound: () => void
 }
 
-export function CardDock({ items, isRoundComplete, onNextRound }: Props) {
+export function CardDock({ items, isRoundComplete, remainingItems, onNextRound }: Props) {
   const { setNodeRef, isOver } = useDroppable({
     id: 'dock',
     data: { isDock: true },
@@ -17,16 +18,15 @@ export function CardDock({ items, isRoundComplete, onNextRound }: Props) {
 
   return (
     <div ref={setNodeRef} className={`${styles.dock} ${isOver ? styles.over : ''}`}>
-      <div className={styles.label}>Распредели карточки</div>
+      <div className={styles.label}>
+        {items.length > 0 ? 'Реши их судьбу' : 'Готово'}
+      </div>
       <div className={styles.cards}>
         {items.map((item) => (
           <DraggableCard key={item.id} item={item} />
         ))}
-        {items.length === 0 && (
-          <span className={styles.empty}>Все карточки распределены!</span>
-        )}
       </div>
-      {isRoundComplete && (
+      {isRoundComplete && remainingItems > 0 && (
         <button className={styles.nextBtn} onClick={onNextRound}>
           Следующий раунд
         </button>
