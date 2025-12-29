@@ -1,6 +1,6 @@
 .row {
   display: flex;
-  height: 190px;
+  min-height: 190px;
   border: 2px solid var(--tier-border);
   border-radius: 0.5rem;
   overflow: hidden;
@@ -13,6 +13,11 @@
   background: var(--tier-bg);
   box-shadow: 0 0 40px var(--tier-glow);
   border-color: var(--tier-border-active);
+}
+
+.row.disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .label {
@@ -46,11 +51,11 @@
 .content {
   flex: 1;
   display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
   gap: 0.5rem;
   padding: 0.625rem;
-  overflow-x: auto;
 }
 
 .content:has(.placeholder) {
@@ -66,7 +71,7 @@
 
 @media (max-width: 900px) {
   .row {
-    height: 155px;
+    min-height: 155px;
   }
 
   .label {

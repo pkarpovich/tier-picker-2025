@@ -14,6 +14,7 @@ interface Props {
   tierList: Record<TierType, MediaItem[]>
   remainingItems: number
   isRoundComplete: boolean
+  usedTiersInRound: Set<TierType>
   onAssignToTier: (item: MediaItem, tier: TierType) => void
   onRemoveFromTier: (item: MediaItem, tier: TierType) => void
   onMoveToTier: (item: MediaItem, fromTier: TierType, toTier: TierType) => void
@@ -38,12 +39,15 @@ export function TierList({
   tierList,
   remainingItems,
   isRoundComplete,
+  usedTiersInRound,
   onAssignToTier,
   onRemoveFromTier,
   onMoveToTier,
   onNextRound,
 }: Props) {
   const [activeItem, setActiveItem] = useState<MediaItem | null>(null)
+  const [isDraggingFromDock, setIsDraggingFromDock] = useState(false)
+  const [activeItemTier, setActiveItemTier] = useState<TierType | null>(null)
   const tierLabels = MEDIA_TYPE_LABELS[category].tiers
 
   const findItemLocation = useCallback(
@@ -66,14 +70,22 @@ export function TierList({
       const itemId = String(event.active.id)
       const allItems = [...currentItems, ...TIER_ORDER.flatMap((t) => tierList[t])]
       const item = allItems.find((i) => i.id === itemId)
-      if (item) setActiveItem(item)
+      if (item) {
+        setActiveItem(item)
+        const location = findItemLocation(itemId)
+        const isFromDock = location && 'dock' in location
+        setIsDraggingFromDock(!!isFromDock)
+        setActiveItemTier(location && 'tier' in location ? location.tier : null)
+      }
     },
-    [currentItems, tierList]
+    [currentItems, tierList, findItemLocation]
   )
 
   const handleDragEnd = useCallback(
     (event: DragEndEvent) => {
       setActiveItem(null)
+      setActiveItemTier(null)
+      setIsDraggingFromDock(false)
       const { active, over } = event
       if (!over) return
 
@@ -114,9 +126,13 @@ export function TierList({
       <DndContext collisionDetection={pointerWithin} onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
         <div className={styles.board}>
           <div className={styles.tiers}>
-            {TIER_ORDER.map((tier) => (
-              <TierRow key={tier} tier={tier} label={tierLabels[tier]} items={tierList[tier]} />
-            ))}
+            {TIER_ORDER.map((tier) => {
+              const isDisabledBySameTier = activeItemTier === tier
+              const isDisabledByUsedInRound = isDraggingFromDock && usedTiersInRound.has(tier)
+              return (
+                <TierRow key={tier} tier={tier} label={tierLabels[tier]} items={tierList[tier]} isDisabled={isDisabledBySameTier || isDisabledByUsedInRound} />
+              )
+            })}
           </div>
 
           <div className={styles.dockWrapper}>

@@ -7,6 +7,7 @@ interface Props {
   tier: TierType
   label: string
   items: MediaItem[]
+  isDisabled?: boolean
 }
 
 const TIER_CONFIG: Record<TierType, { icon: string; placeholder: string; colors: Record<string, string> }> = {
@@ -45,10 +46,11 @@ const TIER_CONFIG: Record<TierType, { icon: string; placeholder: string; colors:
   },
 }
 
-export function TierRow({ tier, label, items }: Props) {
+export function TierRow({ tier, label, items, isDisabled }: Props) {
   const { setNodeRef, isOver } = useDroppable({
     id: tier,
     data: { tier },
+    disabled: isDisabled,
   })
 
   const config = TIER_CONFIG[tier]
@@ -56,7 +58,7 @@ export function TierRow({ tier, label, items }: Props) {
   return (
     <div
       ref={setNodeRef}
-      className={`${styles.row} ${isOver ? styles.over : ''}`}
+      className={`${styles.row} ${isOver ? styles.over : ''} ${isDisabled ? styles.disabled : ''}`}
       style={config.colors as React.CSSProperties}
     >
       <div className={styles.label}>

@@ -29,6 +29,7 @@ function CategoryPage({ category }: { category: MediaType }) {
       tierList={state.tierList}
       remainingItems={remainingInCategory}
       isRoundComplete={isRoundComplete}
+      usedTiersInRound={state.usedTiersInRound}
       onAssignToTier={assignToTier}
       onRemoveFromTier={removeFromTier}
       onMoveToTier={moveToTier}

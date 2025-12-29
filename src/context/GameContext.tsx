@@ -6,6 +6,7 @@ interface GameState {
   currentItems: MediaItem[]
   tierList: Record<TierType, MediaItem[]>
   usedIds: Set<string>
+  usedTiersInRound: Set<TierType>
 }
 
 type GameAction =
@@ -21,6 +22,7 @@ const initialState: GameState = {
   currentItems: [],
   tierList: { forever: [], once: [], delete: [] },
   usedIds: new Set(),
+  usedTiersInRound: new Set(),
 }
 
 function gameReducer(state: GameState, action: GameAction): GameState {
@@ -32,6 +34,7 @@ function gameReducer(state: GameState, action: GameAction): GameState {
         currentItems: action.items,
         tierList: { forever: [], once: [], delete: [] },
         usedIds: newUsedIds,
+        usedTiersInRound: new Set(),
       }
     }
     case 'NEXT_ROUND': {
@@ -41,9 +44,12 @@ function gameReducer(state: GameState, action: GameAction): GameState {
         ...state,
         currentItems: action.items,
         usedIds: newUsedIds,
+        usedTiersInRound: new Set(),
       }
     }
-    case 'ASSIGN_TO_TIER':
+    case 'ASSIGN_TO_TIER': {
+      const newUsedTiers = new Set(state.usedTiersInRound)
+      newUsedTiers.add(action.tier)
       return {
         ...state,
         currentItems: state.currentItems.filter((i) => i.id !== action.item.id),
@@ -51,8 +57,12 @@ function gameReducer(state: GameState, action: GameAction): GameState {
           ...state.tierList,
           [action.tier]: [...state.tierList[action.tier], action.item],
         },
+        usedTiersInRound: newUsedTiers,
       }
-    case 'REMOVE_FROM_TIER':
+    }
+    case 'REMOVE_FROM_TIER': {
+      const newUsedTiers = new Set(state.usedTiersInRound)
+      newUsedTiers.delete(action.tier)
       return {
         ...state,
         currentItems: [...state.currentItems, action.item],
@@ -60,9 +70,14 @@ function gameReducer(state: GameState, action: GameAction): GameState {
           ...state.tierList,
           [action.tier]: state.tierList[action.tier].filter((i) => i.id !== action.item.id),
         },
+        usedTiersInRound: newUsedTiers,
       }
-    case 'MOVE_TO_TIER':
+    }
+    case 'MOVE_TO_TIER': {
       if (action.fromTier === action.toTier) return state
+      const newUsedTiers = new Set(state.usedTiersInRound)
+      newUsedTiers.delete(action.fromTier)
+      newUsedTiers.add(action.toTier)
       return {
         ...state,
         tierList: {
@@ -70,7 +85,9 @@ function gameReducer(state: GameState, action: GameAction): GameState {
           [action.fromTier]: state.tierList[action.fromTier].filter((i) => i.id !== action.item.id),
           [action.toTier]: [...state.tierList[action.toTier], action.item],
         },
+        usedTiersInRound: newUsedTiers,
       }
+    }
     case 'RESET':
       return initialState
     default:
