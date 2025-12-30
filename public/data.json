@@ -4,61 +4,91 @@
       "id": "final-fantasy-xvi",
       "title": "Final Fantasy XVI",
       "year": 2023,
-      "cover": ""
+      "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2515020/header.jpg"
     },
     {
       "id": "elden-ring---night-reign",
       "title": "Elden Ring - Night Reign",
       "year": 2025,
-      "cover": ""
+      "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2622380/header.jpg"
+    },
+    {
+      "id": "ghost-of-yotei",
+      "title": "Ghost of Yotei",
+      "year": 2025,
+      "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202504/2116/050bb77f895515e0b0e906b0b9d75b6174b37eece097b462.png"
     },
     {
       "id": "mafia---the-old-country",
       "title": "Mafia - The Old Country",
       "year": 2025,
-      "cover": ""
+      "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1941540/header.jpg"
+    },
+    {
+      "id": "valorant",
+      "title": "VALORANT",
+      "year": 2020,
+      "cover": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt81ab8f3fc6d6f1ec/673bba88f92d4afcb56c6d71/VAL_Ep_10_EC_ContentStackThumbnail_1200x670_EN.jpg"
     },
     {
       "id": "warhammer-40000---space-marine-2",
       "title": "Warhammer 40000 - Space Marine 2",
       "year": 2024,
-      "cover": ""
+      "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2183900/header.jpg"
     },
     {
       "id": "doom---the-dark-ages",
       "title": "Doom - The Dark Ages",
       "year": 2025,
-      "cover": ""
+      "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3017860/header.jpg"
     },
     {
       "id": "gears-of-war---reloaded",
       "title": "Gears of War - Reloaded",
       "year": 2025,
-      "cover": ""
+      "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3010850/header.jpg"
+    },
+    {
+      "id": "arc-raiders",
+      "title": "ARC Raiders",
+      "year": 2025,
+      "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1808500/header.jpg"
     },
     {
       "id": "indiana-jones-and-the-great-circle",
       "title": "Indiana Jones and the Great Circle",
       "year": 2024,
-      "cover": ""
+      "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2677660/header.jpg"
+    },
+    {
+      "id": "marvel-rivals",
+      "title": "Marvel Rivals",
+      "year": 2024,
+      "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2767030/5565a23d15c87e4dc921affd50dde4d86554c413/header.jpg"
     },
     {
       "id": "call-of-duty---advanced-warfare",
       "title": "Call of Duty - Advanced Warfare",
       "year": 2014,
-      "cover": ""
+      "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/209650/header.jpg"
+    },
+    {
+      "id": "helldivers-2",
+      "title": "HELLDIVERS 2",
+      "year": 2024,
+      "cover": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/553850/header.jpg"
     },
     {
       "id": "death-stranding-2---on-the-beach",
       "title": "Death Stranding 2 - On the Beach",
       "year": 2025,
-      "cover": ""
+      "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202511/2115/ae183c63bbeb38d05ecce96aa7f693b4a3769a1835020b63.png"
     },
     {
       "id": "assassin-s-creed-shadows",
       "title": "Assassin's Creed Shadows",
       "year": 2024,
-      "cover": ""
+      "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3159330/header.jpg"
     },
     {
       "id": "call-of-duty---black-ops-7",
@@ -70,13 +100,19 @@
       "id": "split-fiction",
       "title": "Split Fiction",
       "year": 2025,
-      "cover": ""
+      "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2001120/header.jpg"
     },
     {
       "id": "stellar-blade",
       "title": "Stellar Blade",
       "year": 2024,
-      "cover": ""
+      "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202401/2211/40e7cfd126a11fe5118310ebce6d9b3a23e7cabaca717217.png"
+    },
+    {
+      "id": "fbc---firebreak",
+      "title": "FBC - Firebreak",
+      "year": 2025,
+      "cover": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2272540/header.jpg"
     }
   ],
   "movies": [
@@ -212,6 +248,12 @@
       "type": "movie",
       "year": 2025,
       "image": "https://media.themoviedb.org/t/p/w500/cpf7vsRZ0MYRQcnLWteD5jK9ymT.jpg"
+    },
+    {
+      "id": "avatar-fire-and-ash",
+      "title": "Avatar - Fire and Ash",
+      "year": 2025,
+      "cover": "https://image.tmdb.org/t/p/w500/ecbiOccMRXoAOv0bKr1izpHA0ch.jpg"
     }
   ],
   "series": [
