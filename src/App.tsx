@@ -10,13 +10,18 @@ import './App.css'
 const VALID_CATEGORIES: MediaType[] = ['game', 'movie', 'series', 'book']
 
 function CategoryPage({ category }: { category: MediaType }) {
-  const { state, remainingInCategory, isRoundComplete, startRound, assignToTier, removeFromTier, moveToTier, nextRound } = useGameContext()
+  const { state, remainingInCategory, isRoundComplete, startRound, assignToTier, removeFromTier, moveToTier, nextRound, reset } = useGameContext()
 
   useEffect(() => {
     if (state.currentCategory !== category) {
       startRound(category)
     }
   }, [category, state.currentCategory, startRound])
+
+  const handleReset = useCallback(() => {
+    reset()
+    startRound(category)
+  }, [reset, startRound, category])
 
   if (!state.currentCategory) {
     return <div className="loader">Загрузка...</div>
@@ -34,6 +39,7 @@ function CategoryPage({ category }: { category: MediaType }) {
       onRemoveFromTier={removeFromTier}
       onMoveToTier={moveToTier}
       onNextRound={nextRound}
+      onReset={handleReset}
     />
   )
 }
@@ -54,12 +60,10 @@ function HomePage() {
 function AppContent() {
   const [, navigate] = useLocation()
   const [matchCategory, params] = useRoute('/:category')
-  const { reset } = useGameContext()
 
   const handleLogoClick = useCallback(() => {
-    reset()
     navigate('/')
-  }, [reset, navigate])
+  }, [navigate])
 
   if (matchCategory && params?.category && !VALID_CATEGORIES.includes(params.category as MediaType)) {
     navigate('/')

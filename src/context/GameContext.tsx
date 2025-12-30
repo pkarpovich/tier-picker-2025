@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer, useCallback, useMemo, type ReactNode } from 'react'
+import { createContext, useContext, useReducer, useCallback, useMemo, useEffect, type ReactNode } from 'react'
 import type { MediaItem, MediaType, TierType } from '../types'
 
 interface GameState {
@@ -15,6 +15,7 @@ type GameAction =
   | { type: 'ASSIGN_TO_TIER'; item: MediaItem; tier: TierType }
   | { type: 'REMOVE_FROM_TIER'; item: MediaItem; tier: TierType }
   | { type: 'MOVE_TO_TIER'; item: MediaItem; fromTier: TierType; toTier: TierType }
+  | { type: 'LOAD_STATE'; state: GameState }
   | { type: 'RESET' }
 
 const initialState: GameState = {
@@ -23,6 +24,37 @@ const initialState: GameState = {
   tierList: { forever: [], once: [], delete: [] },
   usedIds: new Set(),
   usedTiersInRound: new Set(),
+}
+
+const STORAGE_KEY = 'tierPicker_state'
+
+function saveToStorage(state: GameState) {
+  if (!state.currentCategory) return
+  const serializable = {
+    currentCategory: state.currentCategory,
+    currentItems: state.currentItems,
+    tierList: state.tierList,
+    usedIds: Array.from(state.usedIds),
+    usedTiersInRound: Array.from(state.usedTiersInRound),
+  }
+  localStorage.setItem(`${STORAGE_KEY}_${state.currentCategory}`, JSON.stringify(serializable))
+}
+
+function loadFromStorage(category: MediaType): GameState | null {
+  const stored = localStorage.getItem(`${STORAGE_KEY}_${category}`)
+  if (!stored) return null
+  const parsed = JSON.parse(stored)
+  return {
+    currentCategory: parsed.currentCategory,
+    currentItems: parsed.currentItems,
+    tierList: parsed.tierList,
+    usedIds: new Set(parsed.usedIds),
+    usedTiersInRound: new Set(parsed.usedTiersInRound),
+  }
+}
+
+function clearStorage(category: MediaType) {
+  localStorage.removeItem(`${STORAGE_KEY}_${category}`)
 }
 
 function gameReducer(state: GameState, action: GameAction): GameState {
@@ -88,6 +120,8 @@ function gameReducer(state: GameState, action: GameAction): GameState {
         usedTiersInRound: newUsedTiers,
       }
     }
+    case 'LOAD_STATE':
+      return action.state
     case 'RESET':
       return initialState
     default:
@@ -168,6 +202,11 @@ export function GameProvider({ children, data }: GameProviderProps) {
   const startRound = useCallback(
     (category: MediaType) => {
       if (state.currentCategory === category) return
+      const savedState = loadFromStorage(category)
+      if (savedState) {
+        dispatch({ type: 'LOAD_STATE', state: savedState })
+        return
+      }
       const items = getNewItems(category, new Set())
       dispatch({ type: 'START_ROUND', category, items })
     },
@@ -195,8 +234,15 @@ export function GameProvider({ children, data }: GameProviderProps) {
   }, [])
 
   const reset = useCallback(() => {
+    if (state.currentCategory) {
+      clearStorage(state.currentCategory)
+    }
     dispatch({ type: 'RESET' })
-  }, [])
+  }, [state.currentCategory])
+
+  useEffect(() => {
+    saveToStorage(state)
+  }, [state])
 
   const value = useMemo(
     () => ({

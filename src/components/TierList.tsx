@@ -19,6 +19,7 @@ interface Props {
   onRemoveFromTier: (item: MediaItem, tier: TierType) => void
   onMoveToTier: (item: MediaItem, fromTier: TierType, toTier: TierType) => void
   onNextRound: () => void
+  onReset: () => void
 }
 
 const TIER_ORDER: TierType[] = ['forever', 'once', 'delete']
@@ -44,6 +45,7 @@ export function TierList({
   onRemoveFromTier,
   onMoveToTier,
   onNextRound,
+  onReset,
 }: Props) {
   const [activeItem, setActiveItem] = useState<MediaItem | null>(null)
   const [isDraggingFromDock, setIsDraggingFromDock] = useState(false)
@@ -117,7 +119,10 @@ export function TierList({
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <span className={styles.badge}>{MEDIA_TYPE_LABELS[category].singular}</span>
+        <div className={styles.headerLeft}>
+          <span className={styles.badge}>{MEDIA_TYPE_LABELS[category].singular}</span>
+          <button className={styles.resetBtn} onClick={onReset}>Заново</button>
+        </div>
         <span className={styles.counter}>
           Осталось: <span className={styles.counterNumber}>{currentItems.length + remainingItems}</span>
         </span>
