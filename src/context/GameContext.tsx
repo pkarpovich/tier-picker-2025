@@ -7,6 +7,9 @@ interface GameState {
   tierList: Record<TierType, MediaItem[]>
   usedIds: Set<string>
   usedTiersInRound: Set<TierType>
+  refreshUsedThisRound: boolean
+  doublePickUsed: boolean
+  doublePickActiveThisRound: boolean
 }
 
 type GameAction =
@@ -15,6 +18,8 @@ type GameAction =
   | { type: 'ASSIGN_TO_TIER'; item: MediaItem; tier: TierType }
   | { type: 'REMOVE_FROM_TIER'; item: MediaItem; tier: TierType }
   | { type: 'MOVE_TO_TIER'; item: MediaItem; fromTier: TierType; toTier: TierType }
+  | { type: 'USE_REFRESH'; items: MediaItem[] }
+  | { type: 'USE_DOUBLE_PICK' }
   | { type: 'LOAD_STATE'; state: GameState }
   | { type: 'RESET' }
 
@@ -24,6 +29,9 @@ const initialState: GameState = {
   tierList: { forever: [], once: [], delete: [] },
   usedIds: new Set(),
   usedTiersInRound: new Set(),
+  refreshUsedThisRound: false,
+  doublePickUsed: false,
+  doublePickActiveThisRound: false,
 }
 
 const STORAGE_KEY = 'tierPicker_state'
@@ -36,6 +44,9 @@ function saveToStorage(state: GameState) {
     tierList: state.tierList,
     usedIds: Array.from(state.usedIds),
     usedTiersInRound: Array.from(state.usedTiersInRound),
+    refreshUsedThisRound: state.refreshUsedThisRound,
+    doublePickUsed: state.doublePickUsed,
+    doublePickActiveThisRound: state.doublePickActiveThisRound,
   }
   localStorage.setItem(`${STORAGE_KEY}_${state.currentCategory}`, JSON.stringify(serializable))
 }
@@ -50,6 +61,9 @@ function loadFromStorage(category: MediaType): GameState | null {
     tierList: parsed.tierList,
     usedIds: new Set(parsed.usedIds),
     usedTiersInRound: new Set(parsed.usedTiersInRound),
+    refreshUsedThisRound: parsed.refreshUsedThisRound ?? false,
+    doublePickUsed: parsed.doublePickUsed ?? false,
+    doublePickActiveThisRound: parsed.doublePickActiveThisRound ?? false,
   }
 }
 
@@ -67,6 +81,9 @@ function gameReducer(state: GameState, action: GameAction): GameState {
         tierList: { forever: [], once: [], delete: [] },
         usedIds: newUsedIds,
         usedTiersInRound: new Set(),
+        refreshUsedThisRound: false,
+        doublePickUsed: false,
+        doublePickActiveThisRound: false,
       }
     }
     case 'NEXT_ROUND': {
@@ -77,11 +94,15 @@ function gameReducer(state: GameState, action: GameAction): GameState {
         currentItems: action.items,
         usedIds: newUsedIds,
         usedTiersInRound: new Set(),
+        doublePickActiveThisRound: false,
       }
     }
     case 'ASSIGN_TO_TIER': {
       const newUsedTiers = new Set(state.usedTiersInRound)
-      newUsedTiers.add(action.tier)
+      const alreadyHasTier = newUsedTiers.has(action.tier)
+      if (!alreadyHasTier || !state.doublePickActiveThisRound) {
+        newUsedTiers.add(action.tier)
+      }
       return {
         ...state,
         currentItems: state.currentItems.filter((i) => i.id !== action.item.id),
@@ -90,6 +111,7 @@ function gameReducer(state: GameState, action: GameAction): GameState {
           [action.tier]: [...state.tierList[action.tier], action.item],
         },
         usedTiersInRound: newUsedTiers,
+        doublePickActiveThisRound: alreadyHasTier && state.doublePickActiveThisRound ? false : state.doublePickActiveThisRound,
       }
     }
     case 'REMOVE_FROM_TIER': {
@@ -120,6 +142,23 @@ function gameReducer(state: GameState, action: GameAction): GameState {
         usedTiersInRound: newUsedTiers,
       }
     }
+    case 'USE_REFRESH': {
+      const newUsedIds = new Set(state.usedIds)
+      state.currentItems.forEach((i) => newUsedIds.delete(i.id))
+      action.items.forEach((i) => newUsedIds.add(i.id))
+      return {
+        ...state,
+        currentItems: action.items,
+        usedIds: newUsedIds,
+        refreshUsedThisRound: true,
+      }
+    }
+    case 'USE_DOUBLE_PICK':
+      return {
+        ...state,
+        doublePickUsed: true,
+        doublePickActiveThisRound: true,
+      }
     case 'LOAD_STATE':
       return action.state
     case 'RESET':
@@ -133,11 +172,15 @@ interface GameContextValue {
   state: GameState
   remainingInCategory: number
   isRoundComplete: boolean
+  canUseRefresh: boolean
+  canUseDoublePick: boolean
   startRound: (category: MediaType) => void
   assignToTier: (item: MediaItem, tier: TierType) => void
   removeFromTier: (item: MediaItem, tier: TierType) => void
   moveToTier: (item: MediaItem, fromTier: TierType, toTier: TierType) => void
   nextRound: () => void
+  useRefresh: () => void
+  useDoublePick: () => void
   reset: () => void
 }
 
@@ -199,6 +242,10 @@ export function GameProvider({ children, data }: GameProviderProps) {
 
   const isRoundComplete = state.currentItems.length === 0 && state.currentCategory !== null
 
+  const canUseRefresh = !state.refreshUsedThisRound && state.currentItems.length > 0
+
+  const canUseDoublePick = !state.doublePickUsed && state.currentItems.length > 0
+
   const startRound = useCallback(
     (category: MediaType) => {
       if (state.currentCategory === category) return
@@ -233,6 +280,22 @@ export function GameProvider({ children, data }: GameProviderProps) {
     dispatch({ type: 'MOVE_TO_TIER', item, fromTier, toTier })
   }, [])
 
+  const useRefresh = useCallback(() => {
+    if (!state.currentCategory || state.refreshUsedThisRound) return
+    const currentItemIds = new Set(state.currentItems.map((i) => i.id))
+    const usedIdsWithoutCurrent = new Set(state.usedIds)
+    currentItemIds.forEach((id) => usedIdsWithoutCurrent.delete(id))
+    const items = getNewItems(state.currentCategory, usedIdsWithoutCurrent)
+    if (items.length > 0) {
+      dispatch({ type: 'USE_REFRESH', items })
+    }
+  }, [state.currentCategory, state.refreshUsedThisRound, state.currentItems, state.usedIds, getNewItems])
+
+  const useDoublePick = useCallback(() => {
+    if (state.doublePickUsed) return
+    dispatch({ type: 'USE_DOUBLE_PICK' })
+  }, [state.doublePickUsed])
+
   const reset = useCallback(() => {
     if (state.currentCategory) {
       clearStorage(state.currentCategory)
@@ -249,14 +312,18 @@ export function GameProvider({ children, data }: GameProviderProps) {
       state,
       remainingInCategory,
       isRoundComplete,
+      canUseRefresh,
+      canUseDoublePick,
       startRound,
       assignToTier,
       removeFromTier,
       moveToTier,
       nextRound,
+      useRefresh,
+      useDoublePick,
       reset,
     }),
-    [state, remainingInCategory, isRoundComplete, startRound, assignToTier, removeFromTier, moveToTier, nextRound, reset]
+    [state, remainingInCategory, isRoundComplete, canUseRefresh, canUseDoublePick, startRound, assignToTier, removeFromTier, moveToTier, nextRound, useRefresh, useDoublePick, reset]
   )
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>

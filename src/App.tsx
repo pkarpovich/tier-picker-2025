@@ -10,7 +10,7 @@ import './App.css'
 const VALID_CATEGORIES: MediaType[] = ['game', 'movie', 'series', 'book']
 
 function CategoryPage({ category }: { category: MediaType }) {
-  const { state, remainingInCategory, isRoundComplete, startRound, assignToTier, removeFromTier, moveToTier, nextRound, reset } = useGameContext()
+  const { state, remainingInCategory, isRoundComplete, canUseRefresh, canUseDoublePick, startRound, assignToTier, removeFromTier, moveToTier, nextRound, useRefresh, useDoublePick, reset } = useGameContext()
 
   useEffect(() => {
     if (state.currentCategory !== category) {
@@ -35,10 +35,15 @@ function CategoryPage({ category }: { category: MediaType }) {
       remainingItems={remainingInCategory}
       isRoundComplete={isRoundComplete}
       usedTiersInRound={state.usedTiersInRound}
+      canUseRefresh={canUseRefresh}
+      canUseDoublePick={canUseDoublePick}
+      isDoublePickActive={state.doublePickActiveThisRound}
       onAssignToTier={assignToTier}
       onRemoveFromTier={removeFromTier}
       onMoveToTier={moveToTier}
       onNextRound={nextRound}
+      onRefresh={useRefresh}
+      onDoublePick={useDoublePick}
       onReset={handleReset}
     />
   )

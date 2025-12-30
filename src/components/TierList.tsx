@@ -15,10 +15,15 @@ interface Props {
   remainingItems: number
   isRoundComplete: boolean
   usedTiersInRound: Set<TierType>
+  canUseRefresh: boolean
+  canUseDoublePick: boolean
+  isDoublePickActive: boolean
   onAssignToTier: (item: MediaItem, tier: TierType) => void
   onRemoveFromTier: (item: MediaItem, tier: TierType) => void
   onMoveToTier: (item: MediaItem, fromTier: TierType, toTier: TierType) => void
   onNextRound: () => void
+  onRefresh: () => void
+  onDoublePick: () => void
   onReset: () => void
 }
 
@@ -41,10 +46,15 @@ export function TierList({
   remainingItems,
   isRoundComplete,
   usedTiersInRound,
+  canUseRefresh,
+  canUseDoublePick,
+  isDoublePickActive,
   onAssignToTier,
   onRemoveFromTier,
   onMoveToTier,
   onNextRound,
+  onRefresh,
+  onDoublePick,
   onReset,
 }: Props) {
   const [activeItem, setActiveItem] = useState<MediaItem | null>(null)
@@ -133,7 +143,7 @@ export function TierList({
           <div className={styles.tiers}>
             {TIER_ORDER.map((tier) => {
               const isDisabledBySameTier = activeItemTier === tier
-              const isDisabledByUsedInRound = isDraggingFromDock && usedTiersInRound.has(tier)
+              const isDisabledByUsedInRound = isDraggingFromDock && usedTiersInRound.has(tier) && !isDoublePickActive
               return (
                 <TierRow key={tier} tier={tier} label={tierLabels[tier]} items={tierList[tier]} isDisabled={isDisabledBySameTier || isDisabledByUsedInRound} />
               )
@@ -145,7 +155,12 @@ export function TierList({
               items={currentItems}
               isRoundComplete={isRoundComplete}
               remainingItems={remainingItems}
+              canUseRefresh={canUseRefresh}
+              canUseDoublePick={canUseDoublePick}
+              isDoublePickActive={isDoublePickActive}
               onNextRound={onNextRound}
+              onRefresh={onRefresh}
+              onDoublePick={onDoublePick}
             />
           </div>
         </div>

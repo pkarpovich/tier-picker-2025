@@ -7,10 +7,25 @@ interface Props {
   items: MediaItem[]
   isRoundComplete: boolean
   remainingItems: number
+  canUseRefresh: boolean
+  canUseDoublePick: boolean
+  isDoublePickActive: boolean
   onNextRound: () => void
+  onRefresh: () => void
+  onDoublePick: () => void
 }
 
-export function CardDock({ items, isRoundComplete, remainingItems, onNextRound }: Props) {
+export function CardDock({
+  items,
+  isRoundComplete,
+  remainingItems,
+  canUseRefresh,
+  canUseDoublePick,
+  isDoublePickActive,
+  onNextRound,
+  onRefresh,
+  onDoublePick,
+}: Props) {
   const { setNodeRef, isOver } = useDroppable({
     id: 'dock',
     data: { isDock: true },
@@ -26,6 +41,26 @@ export function CardDock({ items, isRoundComplete, remainingItems, onNextRound }
           <DraggableCard key={item.id} item={item} />
         ))}
       </div>
+      {items.length > 0 && (
+        <div className={styles.hints}>
+          <button
+            className={`${styles.hintBtn} ${!canUseRefresh ? styles.hintUsed : ''}`}
+            onClick={onRefresh}
+            disabled={!canUseRefresh}
+            title="Перемешать карточки (1 раз за категорию)"
+          >
+            🔄 Рефреш
+          </button>
+          <button
+            className={`${styles.hintBtn} ${styles.hintDouble} ${!canUseDoublePick ? styles.hintUsed : ''} ${isDoublePickActive ? styles.hintActive : ''}`}
+            onClick={onDoublePick}
+            disabled={!canUseDoublePick}
+            title="2 карточки в один тир (1 раз за категорию)"
+          >
+            ✌️ Дубль
+          </button>
+        </div>
+      )}
       {isRoundComplete && remainingItems > 0 && (
         <button className={styles.nextBtn} onClick={onNextRound}>
           Следующий раунд
